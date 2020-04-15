@@ -13,3 +13,18 @@
  *= require_tree .
  *= require_self
  */
+ .button_to {
+    padding-left: 20px;
+    float: left; /* Float the buttons side by side */
+ }
+
+ h3 {
+    padding-left: 20px;
+ }
+
+h1, h2{
+    padding: 20px;
+}
+.row {
+    padding-left: 60px;
+}

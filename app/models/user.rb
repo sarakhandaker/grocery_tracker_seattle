@@ -19,4 +19,8 @@ class User < ApplicationRecord
     def ordered_visits
       self.visits.sort_by{|visit| visit.date}.reverse
     end
+
+    def visits_dates
+      self.visits.uniq(&:date)
+    end
 end

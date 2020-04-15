@@ -1,15 +1,6 @@
-<style>
-h1, h2 {
-    padding: 20px;
-}
-.row {
-    padding-left: 60px;
-}
-</style>
-
 <h1> <%=@item.name%> </h1> 
-<h2> Categroy: <%=@item.category%></h2>
-
+<h2> Category: <%=@item.category%></h2>
+<h2> Avaliable at:</h2>
 <div class="row">
 <% @stores.each do |store| %>
 <div class="card" style="width: 18rem;">

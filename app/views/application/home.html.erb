@@ -4,10 +4,19 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   </head>
 <style>
-h1, h2 {
+h1{
     color: white;
     text-align: center;
-    padding-top: 50px;
+    padding-top: 10px;
+    font-size: 30px;
+}
+h2{
+  color: white;
+  text-align: center;
+}
+#name {
+  font-size: 80px;
+  padding-top: 20px;
 }
 body {
  background-image: url("https://get.pxhere.com/photo/old-vegetables-veggies-health-healthy-cabbage-carrots-fennel-black-background-food-still-life-photography-organism-still-life-plant-vegetable-produce-floral-design-1418869.jpg");
@@ -17,7 +26,7 @@ body {
 </style>
 
   <body>
-  <h1>Seattle Groceries- Stay Safe and Informed!</h1>
+  <h1><div id="name"> OutOfStock </div>Seattle Groceries- Stay Safe and Informed!</h1>
 <%if current_user%>
 <h2> Welcome <%=current_user.name%>! Go to your <a href="/users/<%=current_user.id%>">Account</a>. </h2>
 <%else%>

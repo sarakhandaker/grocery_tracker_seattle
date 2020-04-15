@@ -1,6 +1,7 @@
+
 <h1>Hi there, <%= @user.name %>!</h1>
-<h2>Your Address: <%= @user.address %></h2>
-<h2>Your Email: <%= @user.email%></h2>
+<h3>Your Address: <%= @user.address %></h3>
+<h3>Your Email: <%= @user.email%></h3>
 
 <h2> Recent Visits: </h2>
 <ol>
@@ -9,6 +10,9 @@
 <%end %>
 </ol>
 
-<%=link_to "Submit new visit", '/visits/new'%> <br/>
-<%=link_to "Edit your Account", "/users/#{@user.id}/edit"%> <br/>
-<%=link_to "Logout", logout_path, method: 'post'%>
+<div class= "buttons">
+
+<%=button_to "Submit New Visit", '/visits/new', method: "get"%>
+<%=button_to "Edit your Account", "/users/#{@user.id}/edit", method: "get"%>
+<%=button_to "Logout", logout_path, method: 'post'%>
+<div>

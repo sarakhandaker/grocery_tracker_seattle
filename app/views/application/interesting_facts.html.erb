@@ -1,5 +1,29 @@
-<p>6. Users can see which stores have the most visits and least<br/>
-7. See number of incidents at each store<br/>
-8. See data on least and most avaliable products<br/>
-9. Best day of the week to do groceries (least visits)<br/>
-10. How many people get sick per day<br/></p>
+<style>
+h2 {
+    font-size: large;
+}
+</style>
+
+<h2>Users can see which stores have the most visits</h2>
+
+<%GroceryStore.most_visits.each do |store|%>
+<p> <%=store.chain%> - <%=store.address%> <br/>
+Number of Total Visits: <%=store.visits.count%></p>
+<%end%>
+
+<h2>Users can see which stores have the least visits</h2>
+
+<%GroceryStore.least_visits.each do |store|%>
+<p> <%=store.chain%> - <%=store.address%> <br/>
+Number of Total Visits: <%=store.visits.count%></p>
+<%end%>
+
+<h2>See data on least avaliable products</h2>
+<p> <%=@item.name%>, Category: <%=@item.category%><br/>
+Missing at <%=@item.missing_items.count%> stores! </p>
+
+<h2>Best day of the week to do groceries (least visits)</h2>
+<p> <%=@day_min%>, is the least busiest day!<br/>
+
+<h2>Worst day of the week to do groceries (most visits)</h2>
+<p> <%=@day%>, is the busiest day!<br/>

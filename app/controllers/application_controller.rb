@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
 helper_method :logged_in?
 helper_method :current_user
+helper_method :redirect_user
     def current_user
         if session[:user_id]
         @user=User.find(session[:user_id])
@@ -20,5 +21,8 @@ helper_method :current_user
             render :layout => false
     end
     def interesting_facts
+        @item=Item.most_missing
+        @day=Visit.busy_day
+        @day_min=Visit.not_busy_day
     end
 end

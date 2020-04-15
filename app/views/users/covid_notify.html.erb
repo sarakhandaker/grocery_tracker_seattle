@@ -1,0 +1,9 @@
+<%if @emails.empty? %>
+<%= "You did not potentially infect anyone in this website" %> <br/>
+<%else %>
+<%= "Here is a list of emails of people you may have infected:"%> <br/>
+<ul><%@emails.each do |email|%>
+<li><%=email%></li>
+<%end%>
+</ul>
+<%end%>

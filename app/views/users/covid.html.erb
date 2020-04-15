@@ -1,0 +1,6 @@
+<h1> Which of these visit dates did you get sick? </h1>
+
+<%= form_for @user, as: :user, url: "/users/#{@user.id}/covid_notify", method: :patch do |f| %><br/>
+<%= f.collection_select :visit_ids, @user.visits_dates, :id, :date  %><br/>
+  <%= f.submit "Notify Others" %><br/>
+<% end %>

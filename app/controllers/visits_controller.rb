@@ -2,10 +2,6 @@ class VisitsController < ApplicationController
     before_action :redirect_user
     before_action :set_visit, only: [:show, :edit, :update, :destroy]
     
-    def index
-        @visits = @user.visits
-    end
-    
     def new
         @visit = current_user.visits.build
     end
