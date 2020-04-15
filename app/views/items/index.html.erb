@@ -1,0 +1,33 @@
+<style>
+h1 {
+    padding: 20px;
+}
+p {
+  float: right;
+  padding-top: 0px;
+  padding-right: 40px;
+  padding-bottom: 10px;
+  padding-left: 100px;
+}
+.list {
+  padding: 20px;
+}
+
+</style>
+<h1> List of Items </h1>
+
+<%= form_tag items_path, method: :get do %>
+  <p>
+    <%= text_field_tag :query, params[:query] %>
+    <%= submit_tag "Search", name: nil %>
+  </p>
+<% end %>
+<div class="list">
+<ul>
+<% @items.each do |item|%>
+<li><%=link_to item.name, item_path(item)%>
+<%=item.category %> <br/></li>
+<%end %>
+</ul>
+<div>
+

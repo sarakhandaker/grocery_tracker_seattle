@@ -1,0 +1,14 @@
+<h1>Hi there, <%= @user.name %>!</h1>
+<h2>Your Address: <%= @user.address %></h2>
+<h2>Your Email: <%= @user.email%></h2>
+
+<h2> Recent Visits: </h2>
+<ol>
+<% @user.ordered_visits.each do |visit| %>
+<li>Grocery Store Visit on <%=link_to visit.date.strftime("%d of %B, %Y"), visit_path(visit)%> </li>
+<%end %>
+</ol>
+
+<%=link_to "Submit new visit", '/visits/new'%> <br/>
+<%=link_to "Edit your Account", "/users/#{@user.id}/edit"%> <br/>
+<%=link_to "Logout", logout_path, method: 'post'%>

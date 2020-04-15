@@ -1,0 +1,22 @@
+<style>
+h1 {
+    padding: 20px;
+}
+.row {
+    padding-left: 60px;
+}
+</style>
+<h1> List of Grocery Stores </h1>
+<div class="row">
+<% @grocerystores.each do |store| %>
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title"><%=store.chain%></h5>
+    <%if current_user %>
+    <p class="card-text"><%="#{store.distance_to(current_user).round(2)} miles away from you"%></p>
+       <%end%>
+     </h3><%=link_to store.address, grocery_store_path(store)%><br/></h3>
+  </div>
+</div>
+<%end%>
+</div>

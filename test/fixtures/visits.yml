@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 
+  grocery_store_id: MyString
+  integer,: MyString
+  notes: 
+  date: 2020-04-13 15:06:11
+
+two:
+  user_id: 
+  grocery_store_id: MyString
+  integer,: MyString
+  notes: 
+  date: 2020-04-13 15:06:11

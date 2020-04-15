@@ -1,0 +1,15 @@
+<h1> <%= @store.chain %> </h1><h3><%= @store.address%> </h3>
+<br/>
+<h4> Missing Items: </h4>
+<ul> <%@store.items.each do |item| %>
+<li><%=item.name%> </li>
+<%end%>
+</ul> <br/>
+
+<h4> Recent Visits: </h4>
+<% @store.visits.each do |visit| %>
+<h5><%= link_to visit.date.strftime("%d of %B, %Y"), visit_path(visit)%> By: <%= link_to visit.user.name, user_path(visit.user)%></h5>
+<p><%= visit.notes%> <br/></p>
+<%end%>
+
+<%=link_to "Go back to all grocery stores", grocery_stores_path %>

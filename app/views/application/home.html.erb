@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  </head>
+<style>
+h1, h2 {
+    color: white;
+    text-align: center;
+    padding-top: 50px;
+}
+body {
+ background-image: url("https://get.pxhere.com/photo/old-vegetables-veggies-health-healthy-cabbage-carrots-fennel-black-background-food-still-life-photography-organism-still-life-plant-vegetable-produce-floral-design-1418869.jpg");
+ background-size: cover;
+ background-color: #ccccc3;
+}
+</style>
+
+  <body>
+  <h1>Seattle Groceries- Stay Safe and Informed!</h1>
+<%if current_user%>
+<h2> Welcome <%=current_user.name%>! Go to your <a href="/users/<%=current_user.id%>">Account</a>. </h2>
+<%else%>
+  <h2> Click to <a href="/login">Login</a> or <a href="/signup">Signup</a>! </h2>
+<%end%>
+    <a id="skippy" class="sr-only sr-only-focusable" href="#content">
+      <div class="container">
+      </div>
+    </a>
+
+
+  </body>
+</html>

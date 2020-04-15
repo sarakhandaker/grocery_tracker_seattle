@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>StoreTracker</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <style>
+    .bg-light {
+    background-color: #3b3245!important;}
+.navbar-light .navbar-brand {
+    color: white;}
+    .navbar-light .navbar-nav .nav-link {
+    color: white;
+    padding-left: 30px;
+    }
+    img {
+      max-width: 4%;
+    }
+body {
+  background-color: #dae0e5;
+}
+    </style>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="/"> Seattle Groceries- Stay Safe and Informed!</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+<img class="carrots" src="https://cdn.pixabay.com/photo/2016/04/01/08/29/carrot-1298746_960_720.png">
+ <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+
+  <li class="nav-item">
+       <%if current_user%>
+             <a class="nav-link" href="/users/<%=current_user.id%>">My Account <span class="sr-only">(current)</span></a>
+        <% end %>
+      </li>  
+
+      <li class="nav-item">
+        <a class="nav-link" href="/grocery_stores">List of Grocery Stores</a>
+      </li>
+       <li class="nav-item">
+        <a class="nav-link" href="/items">Search by Item</a>
+      </li>
+         <li class="nav-item">
+        <a class="nav-link" href="#">Covid Notification</a>
+      </li>
+        <li class="nav-item">
+        <a class="nav-link" href="/interesting_facts">Interesting Facts</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+    <%= yield %>
+  </body>
+</html>
