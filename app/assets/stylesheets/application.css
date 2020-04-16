@@ -127,3 +127,9 @@ display: block;
    background-color: grey;
    padding-left: 20px;
  }
+
+ .forms {
+   padding-left: 20px;
+   padding-right: 420px;
+   align-items: center;
+ }
