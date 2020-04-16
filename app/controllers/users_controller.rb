@@ -6,6 +6,7 @@ class UsersController < ApplicationController
     redirect_to "/" unless current_user.id == params[:id].to_i
     if params[:click] == "true"
       @user.update_column(:notify, false)
+      @user.update_column(:sick_date, nil)
       redirect_to @user
     end
   end

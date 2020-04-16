@@ -26,6 +26,7 @@ class Visit < ApplicationRecord
         users=visit_array.map{|visit| visit.user}.uniq
         users.each do |user| 
           user.update_column(:notify, true)
+          user.update_column(:sick_date, sick_visit.date)
         end
         users.count
       end

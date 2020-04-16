@@ -26,6 +26,17 @@ class VisitsController < ApplicationController
         end
     end
 
+    def edit
+        redirect_to "/" unless current_user == @visit.user
+    end
+    def update
+        if @visit.update(visit_params)
+            redirect_to visit_path(@visit)
+          else
+            flash[:error_messages]=@visit.errors.full_messages
+            render :edit
+          end
+    end
     def destroy
         @visit.destroy
         redirect_to user_path(current_user)

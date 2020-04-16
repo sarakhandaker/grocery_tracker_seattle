@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_16_215854) do
+ActiveRecord::Schema.define(version: 2020_04_16_221112) do
 
   create_table "grocery_stores", force: :cascade do |t|
     t.string "chain"
@@ -45,6 +45,7 @@ ActiveRecord::Schema.define(version: 2020_04_16_215854) do
     t.datetime "updated_at", precision: 6, null: false
     t.boolean "notify"
     t.boolean "admin"
+    t.datetime "sick_date"
   end
 
   create_table "visits", force: :cascade do |t|
