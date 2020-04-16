@@ -8,7 +8,7 @@
 
 <h1>Hi There, <%= @user.name %>!</h1>
 
-<%if current_user.id==1 %>
+<%if current_user.admin %>
 <h2 style="font-style: italic;"> This is an Admin Account </h2>
 <%end%>
 
@@ -25,7 +25,7 @@
 <div class= "buttons">
 
 <%=button_to "Submit New Visit", '/visits/new', method: "get"%>
-<%if current_user.id==1 %>
+<%if current_user.admin %>
 <%=button_to "Submit New Visit with New Grocery Store", '/visits/new', method: "get", params: {admin: :true}%>
 <%end%>
 <%=button_to "Edit your Account", "/users/#{@user.id}/edit", method: "get"%>
