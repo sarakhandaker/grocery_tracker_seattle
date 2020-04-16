@@ -48,7 +48,7 @@ class UsersController < ApplicationController
 
   def covid_notify
     @visit=Visit.find(params[:user][:visit_ids])
-    @emails=Visit.emails(@visit)
+    @count=Visit.sick_users(@visit)
     render 'users/covid_notify'
   end
     
