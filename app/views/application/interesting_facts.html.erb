@@ -1,29 +1,17 @@
-<style>
-h2 {
-    font-size: large;
-}
-</style>
 
-<h2>Users can see which stores have the most visits</h2>
-
+<h2>Stores with most visits:</h2>
+<ol>
 <%GroceryStore.most_visits.each do |store|%>
-<p> <%=store.chain%> - <%=store.address%> <br/>
-Number of Total Visits: <%=store.visits.count%></p>
-<%end%>
+<li> <%=store.chain%> - <%=link_to store.address, grocery_store_path(store)%> <br/>
+Number of Total Visits: <%=store.visits.count%></li>
+<%end%></ol>
 
-<h2>Users can see which stores have the least visits</h2>
-
-<%GroceryStore.least_visits.each do |store|%>
-<p> <%=store.chain%> - <%=store.address%> <br/>
-Number of Total Visits: <%=store.visits.count%></p>
-<%end%>
-
-<h2>See data on least avaliable products</h2>
-<p> <%=@item.name%>, Category: <%=@item.category%><br/>
+<h2>Least Avaliable Product</h2>
+<p> <%=link_to @item.name, item_path(@item)%>, Category: <%=@item.category%><br/>
 Missing at <%=@item.missing_items.count%> stores! </p>
 
-<h2>Best day of the week to do groceries (least visits)</h2>
-<p> <%=@day_min%>, is the least busiest day!<br/>
+<h2>Best and Worst Day of the Week</h2>
+<p> <%=@day_min%>, is the least busiest day! (least visits)<br/>
+<p> <%=@day%>, is the busiest day! (most visits)<br/>
 
-<h2>Worst day of the week to do groceries (most visits)</h2>
-<p> <%=@day%>, is the busiest day!<br/>
+<img class= "account_image" src="https://img.rawpixel.com/s3fs-private/rawpixel_images/website_content/a010-markusspiske-jan19-msp_1901_4189.jpg?auto=format&bg=transparent&con=3&cs=srgb&dpr=1&fm=jpg&ixlib=php-3.1.0&mark=rawpixel-watermark.png&markalpha=90&markpad=13&markscale=10&markx=25&q=75&usm=15&vib=3&w=1400&s=923c6aeea6cfcf42101c767900503cc4">

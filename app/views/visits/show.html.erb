@@ -1,10 +1,10 @@
-<h1>Information for Grocery Store Visit on <%=@visit.date.strftime("%d of %B, %Y")%> </h1>
-<h4> Store Location: </h4>
-<%@visit.grocery_store.chain%> <%=link_to @visit.grocery_store.address, grocery_store_path(@visit.grocery_store) %>
-<h4> User: </h4>
-<%=@visit.user.name%>
-<h4> Date: <%=@visit.date.strftime("%d of %B, %Y")%> </h4>
-<h4> Notes: </h4>
+<h1>Grocery Store Visit on <%=@visit.date.strftime("%d of %B, %Y")%> </h1>
+<h3> Store: <%=@visit.grocery_store.chain%> <%=link_to @visit.grocery_store.address, grocery_store_path(@visit.grocery_store) %> </h3>
+<h3> User: <%=@visit.user.name%> </h3>
+<h3> Date: <%=@visit.date.strftime("%d of %B, %Y")%> </h3>
+<h3> Notes: </h3>
 <p><%=@visit.notes%></p>
-<%= link_to "Edit", edit_visit_path%>
-<%= link_to "Delete", @visit, method: "delete", data: {confirm: "Are you sure you want to delete this visit"}%>
+<%= button_to "Edit", edit_visit_path, method: :get%>
+<%= button_to "Delete", @visit, method: "delete", data: {confirm: "Are you sure you want to delete this visit"}%>
+<img class= "account_image" src="https://img.rawpixel.com/s3fs-private/rawpixel_images/website_content/a010-markusspiske-jan19-msp_1901_4189.jpg?auto=format&bg=transparent&con=3&cs=srgb&dpr=1&fm=jpg&ixlib=php-3.1.0&mark=rawpixel-watermark.png&markalpha=90&markpad=13&markscale=10&markx=25&q=75&usm=15&vib=3&w=1400&s=923c6aeea6cfcf42101c767900503cc4">
+<div>

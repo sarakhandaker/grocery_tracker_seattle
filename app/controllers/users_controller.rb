@@ -4,6 +4,10 @@ class UsersController < ApplicationController
   def show
     redirect_user
     redirect_to "/" unless current_user.id == params[:id].to_i
+    if params[:click] == "true"
+      @user.update_column(:notify, false)
+      redirect_to @user
+    end
   end
   def edit 
     redirect_user

@@ -1,15 +1,21 @@
 <h1> Edit Your Account Information </h1>
 <%= form_for @user do |f| %>
   <%= f.label :name %>
-  <%= f.text_field :name %>
+  <%= f.text_field :name %><br/>
   <%= f.label :password %>
-  <%= f.password_field :password %>
+  <%= f.password_field :password %><br/>
   <%= f.label :password_confirmation %>
-  <%= f.password_field :password_confirmation %>
+  <%= f.password_field :password_confirmation %><br/>
   <%= f.label :address %>
-  <%= f.text_field :address %>
+  <%= f.text_field :address %><br/>
   <%= f.label :email %>
-  <%= f.text_field :email %>
+  <%= f.text_field :email %><br/>
 
   <%= f.submit "Edit" %>
 <% end %>
+
+<%if flash[:error_messages]%>
+<%flash[:error_messages].each do |error| %><br/>
+<%=error%>
+<%end%>
+<%end%>

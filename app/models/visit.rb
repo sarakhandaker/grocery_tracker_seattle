@@ -19,6 +19,11 @@ class Visit < ApplicationRecord
       relevant_visits.each do |vis|
         visit_array+= self.all.select{|visit| visit.grocery_store==vis.grocery_store && visit.date==vis.date}
       end
+
+      visit_array.each do |visit| 
+        visit.user.update_column(:notify, true)
+      end
+    
       emails=visit_array.map{|visit| visit.user.email}.uniq
       emails.delete(sick_visit.user.email)
       emails

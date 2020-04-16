@@ -1,7 +1,14 @@
 
-<h1>Hi there, <%= @user.name %>!</h1>
-<h3>Your Address: <%= @user.address %></h3>
-<h3>Your Email: <%= @user.email%></h3>
+<%if @user.notify%>
+<div id="notification">
+<h1> NOTIFICATION: YOU SHARED A GROCERY STORE VISIT WITH SOMEONE WITH COVID!! </h1>
+<%= button_to "Dismiss", user_path(@user), method: :get, params: {click: :true} %>
+<%end%>
+</div>
+
+<h1>Hi There, <%= @user.name %>!</h1>
+<h3> Contact Information: </h3>
+<p>Your Address: <%= @user.address %><br/>Your Email: <%= @user.email%></p>
 
 <h2> Recent Visits: </h2>
 <ol>
@@ -15,4 +22,6 @@
 <%=button_to "Submit New Visit", '/visits/new', method: "get"%>
 <%=button_to "Edit your Account", "/users/#{@user.id}/edit", method: "get"%>
 <%=button_to "Logout", logout_path, method: 'post'%>
+
+<img class= "account_image" src="https://img.rawpixel.com/s3fs-private/rawpixel_images/website_content/a010-markusspiske-jan19-msp_1901_4189.jpg?auto=format&bg=transparent&con=3&cs=srgb&dpr=1&fm=jpg&ixlib=php-3.1.0&mark=rawpixel-watermark.png&markalpha=90&markpad=13&markscale=10&markx=25&q=75&usm=15&vib=3&w=1400&s=923c6aeea6cfcf42101c767900503cc4">
 <div>
