@@ -1,7 +1,7 @@
 <h1 style="display:inline;"><%= @store.chain %></h1> <h3 style="display:inline;"><%= @store.address%></h3>
 <br/>
 <h3> Missing Items: </h3>
-<ul> <%@store.items.each do |item| %>
+<ul> <%@items.each do |item| %>
 <li><%=item.name%> </li>
 <%end%>
 </ul>

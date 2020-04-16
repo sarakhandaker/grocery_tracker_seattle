@@ -17,3 +17,9 @@
   <%= f.text_area :notes %><br/>
   <%= f.submit %><br/>
   <% end %>
+
+  <%if flash[:error_messages]%>
+<%flash[:error_messages].each do |error| %><br/>
+<%=error%>
+<%end%>
+<%end%>

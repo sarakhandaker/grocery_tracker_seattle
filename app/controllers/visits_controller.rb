@@ -37,10 +37,7 @@ class VisitsController < ApplicationController
         store=GroceryStore.find(params[:visit][:grocery_store_id].to_i)
         ids=params[:grocery_store][:item_ids].map{ |id| id.to_i }
         ids.each do |id| 
-            if id==0 || store.items.include?(Item.find(id))
-            else
-                MissingItem.create(grocery_store_id: store.id, item_id: id)
-            end
+            MissingItem.create(grocery_store_id: store.id, item_id: id, date: @visit.date)
         end
     end
 
