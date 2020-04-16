@@ -31,7 +31,7 @@ ActiveRecord::Schema.define(version: 2020_04_16_165511) do
     t.integer "item_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.time "date"
+    t.datetime "date"
   end
 
   create_table "users", force: :cascade do |t|

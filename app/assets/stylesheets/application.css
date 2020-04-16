@@ -117,3 +117,11 @@ display: block;
   left: 20px;
   top: 500px;
 }
+
+ #map {
+   width: 35%;
+   height: 80px;
+   background-color: grey;
+   padding-left: 20px;
+ }
+ 

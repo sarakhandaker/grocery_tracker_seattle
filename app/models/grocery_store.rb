@@ -6,6 +6,7 @@ class GroceryStore < ApplicationRecord
     has_many :users, through: :visits
     has_many :missing_items
     has_many :items, through: :missing_items
+    validates_with AddressValidator
 
     def self.list_by_distance(user)
         self.all.sort_by{|store| store.distance_to(user) }

@@ -14,6 +14,6 @@ class GroceryStoresController < ApplicationController
         @items=@store.items.uniq
     end
     def delete_old_missing_items
-        MissingItem.where(['date < ?', 7.days.ago]).destroy_all
+        MissingItem.where('date < ?', 7.days.ago).destroy_all
     end
 end

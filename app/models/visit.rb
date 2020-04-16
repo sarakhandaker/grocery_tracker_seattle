@@ -1,6 +1,7 @@
 class Visit < ApplicationRecord
     belongs_to :user
     belongs_to :grocery_store
+    accepts_nested_attributes_for :grocery_store
     validate :date_cannot_be_in_the_future
     validates :notes, length: { maximum: 500 }
     validates :user, :uniqueness => {:scope => [:date, :grocery_store], 

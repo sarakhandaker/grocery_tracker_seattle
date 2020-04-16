@@ -1,0 +1,34 @@
+<%= form_for @visit do |f| %><br/>
+<%= f.label "User:" %> <%=@visit.user.name%><br/>
+
+<%if current_user.id==1%>
+<%= f.label "Make a New Grocery Store (Admin Only):" %><br/>
+ <%= f.fields_for :grocery_store, @visit.build_grocery_store do |grocery_stores_fields| %>
+    <%= f.label "Grocery Store Chain:" %>
+    <%= grocery_stores_fields.text_field :chain %>
+    <%= f.label "Grocery Store Address:" %>
+    <%= grocery_stores_fields.text_field :address %><br/>
+  <% end %>
+<%end%>
+
+<%= f.label "Date of Visit:" %> 
+<%= f.date_select(:date, :order => [:month, :day, :year]) %><br/>
+<%= f.label "Select Missing Items:" %> <br/>
+<%= fields_for :grocery_store, @visit.grocery_store do |f| %>
+  <%= f.collection_check_boxes :item_ids, Item.all, :id, :name do |b| %>
+        <%= b.label class:"label-checkbox" do%>
+         <%=b.check_box + b.text%>
+        <%end%>
+    <% end %>
+  <% end %>
+  <br/>
+  <%= f.label "Notes:" %><br/>
+  <%= f.text_area :notes %><br/>
+  <%= f.submit %><br/>
+  <% end %>
+
+  <%if flash[:error_messages]%>
+<%flash[:error_messages].each do |error| %><br/>
+<%=error%>
+<%end%>
+<%end%>
