@@ -25,4 +25,6 @@ helper_method :redirect_user
         @day=Visit.busy_day
         @day_min=Visit.not_busy_day
     end
+    def about
+    end
 end

@@ -1,7 +1,7 @@
 
 <%if @user.notify%>
 <div id="notification">
-<h5> NOTIFICATION: On <%=@user.sick_date.delete_suffix(" 00:00:00")%> you may have shared a grocery store visit with someone with COVID! </h5>
+<h5> NOTIFICATION: On <%=@user.sick_date.strftime("%d of %B, %Y")%> you may have shared a grocery store visit with someone with COVID! </h5>
 <%= button_to "Dismiss", user_path(@user), method: :get, params: {click: :true} %>
 <%end%>
 </div>

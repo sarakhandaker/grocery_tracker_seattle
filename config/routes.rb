@@ -11,5 +11,6 @@ Rails.application.routes.draw do
   get '/interesting_facts'=> 'application#interesting_facts'
   get '/users/:id/covid' => 'users#covid', as: 'covid'
   patch '/users/:id/covid_notify' => 'users#covid_notify'
+  get '/about'=> 'application#about'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

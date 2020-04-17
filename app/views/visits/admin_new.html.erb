@@ -1,3 +1,5 @@
+<h1> Create Visit With New Grocery Store </h1>
+<div class="forms">
 <%= form_for @visit do |f| %><br/>
 <%= f.label "User:" %> <%=@visit.user.name%><br/>
 
@@ -26,9 +28,10 @@
   <%= f.text_area :notes %><br/>
   <%= f.submit %><br/>
   <% end %>
-
+</div>
   <%if flash[:error_messages]%>
 <%flash[:error_messages].each do |error| %><br/>
 <%=error%>
 <%end%>
 <%end%>
+<img class= "account_image" src="https://img.rawpixel.com/s3fs-private/rawpixel_images/website_content/a010-markusspiske-jan19-msp_1901_4189.jpg?auto=format&bg=transparent&con=3&cs=srgb&dpr=1&fm=jpg&ixlib=php-3.1.0&mark=rawpixel-watermark.png&markalpha=90&markpad=13&markscale=10&markx=25&q=75&usm=15&vib=3&w=1400&s=923c6aeea6cfcf42101c767900503cc4">

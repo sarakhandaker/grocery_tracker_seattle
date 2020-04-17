@@ -1,5 +1,5 @@
-
-<h2>Stores with most visits:</h2>
+<h1>Interesting Facts</h1>
+<h2>Stores With Most Visits:</h2>
 <ol>
 <%GroceryStore.most_visits.each do |store|%>
 <li> <%=store.chain%> - <%=link_to store.address, grocery_store_path(store)%> <br/>
